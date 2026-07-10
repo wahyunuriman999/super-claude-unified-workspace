@@ -1,8 +1,8 @@
 ---
-name: super-claude-unified-workspace
+name: aegis
 description: >
   AEOS Super OS — AI Engineering Operating System. 24-Engine Adaptive Software Engineering
-  Runtime (SCUW v5.1) fully integrated with AEOS Domain Knowledge (Foundation,
+  Runtime (AEGIS v5.1) fully integrated with AEOS Domain Knowledge (Foundation,
   Engineering, Architecture, Backend, Database, Frontend), backed by an expanded reference
   library in /foundation, /engineering, /architecture, /backend, /database for
   progressive disclosure. Use for any non-trivial coding task — new features, bug
@@ -12,10 +12,10 @@ version: 5.1.0
 domains: [foundation, engineering, architecture, backend, database, frontend]
 ---
 
-# SCUW v5.1 — AI Engineering Runtime (Edisi Metakognisi & Graph-Based Adaptive Execution)
+# AEGIS v5.1 — AI Engineering Runtime (Edisi Metakognisi & Graph-Based Adaptive Execution)
 
 Two systems, one file:
-- **Part 1 (SCUW)**: *how* you execute — 24 cognitive engines across 4 adaptive phases. Safety-first, honest, minimal.
+- **Part 1 (AEGIS)**: *how* you execute — 24 cognitive engines across 4 adaptive phases. Safety-first, honest, minimal.
 - **Part 2 (AEOS)**: *what* you know — concrete domain standards for Foundation, Engineering, Architecture, Backend, Database, Frontend.
 
 Every rule prevents a real failure mode. If a rule doesn't change behavior, it doesn't belong here.
@@ -24,7 +24,7 @@ Every rule prevents a real failure mode. If a rule doesn't change behavior, it d
 
 ---
 
-# PART 1 — SCUW: AUTONOMOUS RUNTIME & SCHEDULER
+# PART 1 — AEGIS: AUTONOMOUS RUNTIME & SCHEDULER
 
 ---
 
@@ -68,9 +68,9 @@ If unsure: state which two tiers you're between and why, then proceed with the s
 
 ---
 
-## SCUW v5.1 AUTONOMOUS RUNTIME & SCHEDULER
+## AEGIS v5.1 AUTONOMOUS RUNTIME & SCHEDULER
 
-Instead of a static, linear phase progression, SCUW v5.1 operates as an autonomous runtime governed by the **Cognitive Scheduler**. The Scheduler manages the execution lifecycle of the 24 cognitive engines through an adaptive loop:
+Instead of a static, linear phase progression, AEGIS v5.1 operates as an autonomous runtime governed by the **Cognitive Scheduler**. The Scheduler manages the execution lifecycle of the 24 cognitive engines through an adaptive loop:
 
 ```
     [User Request]
@@ -369,7 +369,7 @@ Before delivering any solution, score the final implementation against these 5 d
 
 ## §6.6 COGNITIVE RUNTIME ARCHITECTURE & SCHEDULER (v4.5)
 
-To fully transition SCUW from a protocol into an adaptive **AI Engineering Runtime**, you must adhere to the following architectural specifications:
+To fully transition AEGIS from a protocol into an adaptive **AI Engineering Runtime**, you must adhere to the following architectural specifications:
 
 ### 1. Global Runtime Context Object (RTCO)
 Every execution must maintain a single, synchronized context object:
@@ -432,9 +432,9 @@ Before editing files, run a simulation pass to calculate and print risk percenta
 
 ---
 
-## §6.7 SCUW RUNTIME CORE & PLUGIN SDK SPECIFICATION (v5.1)
+## §6.7 AEGIS RUNTIME CORE & PLUGIN SDK SPECIFICATION (v5.1)
 
-To transition SCUW from a passive knowledge protocol into a fully decentralized **AI Orchestration Framework**, you must adhere to the following core runtime architecture:
+To transition AEGIS from a passive knowledge protocol into a fully decentralized **AI Orchestration Framework**, you must adhere to the following core runtime architecture:
 
 ### 1. Shared Blackboard Architecture
 All active engines communicate via a central **Shared Blackboard** rather than calling each other sequentially:
@@ -541,7 +541,7 @@ Run during E10. Audit every diff for:
 
 - This protocol grows only when a change measurably reduces errors, reduces wasted tokens, or removes ambiguity — not to look thorough.
 - **Project-specific conventions override this protocol's style preferences** (E7 rule 8). This file governs process safety, not code style.
-- SCUW+AEOS does not replace code review, architecture decisions, or domain expertise. It is a discipline for how changes get made, not a guarantee they are correct.
+- AEGIS+AEOS does not replace code review, architecture decisions, or domain expertise. It is a discipline for how changes get made, not a guarantee they are correct.
 - Engines are additive to the Invariants — no engine can override or weaken an Invariant.
 
 ---
