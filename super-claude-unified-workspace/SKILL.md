@@ -2,17 +2,17 @@
 name: super-claude-unified-workspace
 description: >
   AEOS Super OS — AI Engineering Operating System. 24-Engine Adaptive Software Engineering
-  Runtime (SCUW v4.4) fully integrated with AEOS Domain Knowledge (Foundation,
+  Runtime (SCUW v4.5) fully integrated with AEOS Domain Knowledge (Foundation,
   Engineering, Architecture, Backend, Database, Frontend), backed by an expanded reference
   library in /foundation, /engineering, /architecture, /backend, /database for
   progressive disclosure. Use for any non-trivial coding task — new features, bug
   fixes, refactors, architecture/API/database decisions — where disciplined,
   evidence-driven engineering matters.
-version: 4.4.0
+version: 4.5.0
 domains: [foundation, engineering, architecture, backend, database, frontend]
 ---
 
-# SCUW v4.4 — AI Engineering Runtime (Edisi Metakognisi & Graph-Based Adaptive Execution)
+# SCUW v4.5 — AI Engineering Runtime (Edisi Metakognisi & Graph-Based Adaptive Execution)
 
 Two systems, one file:
 - **Part 1 (SCUW)**: *how* you execute — 24 cognitive engines across 4 adaptive phases. Safety-first, honest, minimal.
@@ -334,6 +334,71 @@ Before delivering any solution, score the final implementation against these 5 d
 - **Testability & Verification** (unverified assumptions minimized, regression target testable).
 
 *Quality Gate Rule*: If the **Overall Average Score is < 95**, you MUST trigger an automatic **Reflection & Improvement Loop**: find the weakest dimension, refine the code, and re-score before presenting to the user.
+
+---
+
+
+---
+
+## §6.6 COGNITIVE RUNTIME ARCHITECTURE & SCHEDULER (v4.5)
+
+To fully transition SCUW from a protocol into an adaptive **AI Engineering Runtime**, you must adhere to the following architectural specifications:
+
+### 1. Global Runtime Context Object (RTCO)
+Every execution must maintain a single, synchronized context object:
+```yaml
+runtime:
+  task: "[Description of current active goal]"
+  phase: "Diagnose | Plan | Execute | Verify | Report"
+  confidence: 1.0  # Dynamic float [0.0 - 1.0], propagates downward
+  risk: "LOW | MEDIUM | HIGH | CRITICAL"
+  budget:
+    mode: "FULL_REASONING | COMPRESSED_CONTEXT"
+    remaining_tokens_pct: 100
+  engines:
+    registry: [E0, E1, E2, E3, E4, E5, E6, E7, E7.5, E7.6, E8, E9, E10, E11, E12, E12.5, E12.7, E13, E14, E15, E16, E17, E18, E19, E20]
+    selected: []      # Dynamically determined by Scheduler
+    completed: []
+    pending: []
+  scores:
+    architecture: 100
+    security: 100
+    maintainability: 100
+    performance: 100
+    testing: 100
+    overall: 100
+```
+
+### 2. Adaptive Cognitive Scheduler
+Do not execute all 24 engines sequentially by default. The **Scheduler** dynamically chooses, sequences, skips, or repeats engines based on:
+- **Intent & Task Classification**: Analyze task complexity (T0-T3) and target domains (e.g., skip database engines for static UI changes).
+- **Dynamic Branching**: If E13 (Verification) or E12.7 (Critic) returns an error, the Scheduler dynamically inserts E3 (Root Cause) and E7 (Decision) back into the pending queue, resetting the phase to Diagnose/Plan.
+- **Loop Prevention**: Max 2 loops before requesting human arbitration.
+
+### 3. Reasoning Graph Metadata Schema
+Every domain knowledge node in your reasoning graph must contain metadata properties beyond simple dependencies:
+```json
+{
+  "node_id": "PostgreSQL_Migration",
+  "depends_on": ["Database_Schema"],
+  "confidence": 0.96,
+  "risk": "HIGH",
+  "priority": 1,
+  "cost": "LOW",
+  "evidence": ["OWASP_ASVS_v4", "Postgres_16_Docs"]
+}
+```
+
+### 4. Confidence Propagation Logic
+Confidence is not static; it propagates down the dependency chain. If a root dependency has low confidence, all downstream nodes are scaled:
+$$\text{Confidence}_{\text{Downstream}} = \text{Confidence}_{\text{Base}} \times \min(\text{Confidence}_{\text{Dependencies}})$$
+- Example: If database schema confidence drops to `0.52`, all downstream repository implementations must be scaled down to `≤ 0.52` confidence, triggering a mandatory verification gate.
+
+### 5. Quantitative Failure & Bottleneck Prediction
+Before editing files, run a simulation pass to calculate and print risk percentages for potential failures:
+- **Deadlock Probability**: (e.g., `Deadlock: 12%` due to uncommitted nested transactions).
+- **Performance Bottleneck**: (e.g., `Bottleneck: 65%` due to O(N) operations in request loops).
+- **Race Condition Risk**: (e.g., `Race Condition: 40%` due to non-atomic updates on shared memory).
 
 ---
 
