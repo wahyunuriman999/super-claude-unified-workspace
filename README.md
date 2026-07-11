@@ -9,6 +9,7 @@
   
   <p>
     [ <strong><a href="#core-architecture">Architecture</a></strong> ] • 
+    [ <strong><a href="#installation">Installation</a></strong> ] • 
     [ <strong><a href="#philosophy">Philosophy</a></strong> ] • 
     [ <strong><a href="#benchmarks">Benchmark</a></strong> ] • 
     [ <strong><a href="#roadmap">Roadmap</a></strong> ] • 
@@ -163,6 +164,38 @@ graph TD
     PI --> OL[Ollama]
     PI --> 9R[9Router]
     PI --> LL[LiteLLM]
+```
+
+---
+
+## 💾 Installation
+
+AEGIS runs locally to ensure absolute control over the cognitive pipeline. 
+
+### macOS / Linux
+```bash
+# Clone the Core Runtime
+git clone https://github.com/wahyunuriman999/AEGIS-Core.git
+cd AEGIS-Core
+
+# Install dependencies (Python 3.10+)
+pip install -r requirements.txt
+
+# Boot the Kernel
+python AEGIS-Runtime/kernel_runner.py --boot
+```
+
+### Windows (PowerShell)
+```powershell
+# Clone the Core Runtime
+git clone https://github.com/wahyunuriman999/AEGIS-Core.git
+cd AEGIS-Core
+
+# Install dependencies (Python 3.10+)
+pip install -r requirements.txt
+
+# Boot the Kernel
+python AEGIS-Runtime\kernel_runner.py --boot
 ```
 
 ---
