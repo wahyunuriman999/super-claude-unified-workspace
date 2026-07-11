@@ -992,25 +992,17 @@ Default to **PostgreSQL** for any new relational workload unless there is a spec
 
 
 ---
-## §8. AEGIS COGNITIVE RUNTIME (v6.0)
+---
+## §8. AEGIS COGNITIVE RUNTIME (v7.0)
 
 AEGIS is no longer just a prompt framework. It operates as a Multi-Agent Cognitive Runtime.
+When AEGIS is invoked, the AI MUST strictly route its execution through the following `runtime/` layers sequentially before generating an output:
 
-### 8.1 Virtual Engineering Team (Debate Engine)
-For critical architectural decisions, the Planner MUST simulate a debate by invoking specialized sub-agents located in `agents/`:
-- **Architecture Agent**: Evaluates scalability and structural integrity.
-- **Security Agent**: Evaluates attack vectors and vulnerabilities.
-- **Performance Agent**: Evaluates latency and resource bottlenecks.
-*Consensus must be reached before finalizing an output.*
+1. **Observe & Plan**: Read `runtime/planner.md`
+2. **Contextual Reasoning**: Read `runtime/reasoner.md`
+3. **Simulation**: Read `runtime/simulation_engine.md`
+4. **Validation**: Read `runtime/validator.md` (Invoke virtual agents in `agents/` if needed)
+5. **Execute**: Provide the final code/response to the user.
+6. **Reflection**: Read `runtime/learning_engine.md` to log failures and adapt.
 
-### 8.2 Engineering Genome
-The `knowledge.graph.json` contains DNA for each concept (`score`, `cost`, `risk`, `success_rate`). The Planner MUST prioritize nodes with high success rates and low risk.
-
-### 8.3 Failure Database & Decision DNA
-- **FAILURE_DB.json**: The Planner MUST lookup known past failures before proceeding.
-- **Decision DNA**: Every finalized architectural decision must document:
-  - `Why?`
-  - `Alternatives Considered?`
-  - `Tradeoffs?`
-  - `Risks?`
-  - `When NOT to use?`
+*Bypassing the Runtime layer is strictly prohibited.*
