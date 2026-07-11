@@ -10,6 +10,7 @@
   <p>
     [ <strong><a href="#core-architecture">Architecture</a></strong> ] • 
     [ <strong><a href="#installation">Installation</a></strong> ] • 
+    [ <strong><a href="#usage-guide">Usage Guide</a></strong> ] • 
     [ <strong><a href="#philosophy">Philosophy</a></strong> ] • 
     [ <strong><a href="#benchmarks">Benchmark</a></strong> ] • 
     [ <strong><a href="#roadmap">Roadmap</a></strong> ] • 
@@ -172,30 +173,72 @@ graph TD
 
 AEGIS runs locally to ensure absolute control over the cognitive pipeline. 
 
+> [!WARNING]
+> **Permission Denied Error?** 
+> If you are on Windows and see `fatal: could not create work tree dir 'AEGIS-Core': Permission denied`, it means your terminal is opened in a restricted system folder like `C:\WINDOWS\System32`. 
+> Always navigate to your user directory first (e.g., `cd $env:USERPROFILE\Documents`) before running `git clone`.
+
 ### macOS / Linux
 ```bash
-# Clone the Core Runtime
+# 1. Navigate to a safe directory (e.g., Documents)
+cd ~/Documents
+
+# 2. Clone the Core Runtime
 git clone https://github.com/wahyunuriman999/AEGIS-Core.git
 cd AEGIS-Core
 
-# Install dependencies (Python 3.10+)
+# 3. Install dependencies (Requires Python 3.10+)
 pip install -r requirements.txt
 
-# Boot the Kernel
+# 4. Boot the Kernel
 python AEGIS-Runtime/kernel_runner.py --boot
 ```
 
 ### Windows (PowerShell)
 ```powershell
-# Clone the Core Runtime
+# 1. Navigate to a safe directory (e.g., Documents)
+cd $env:USERPROFILE\Documents
+
+# 2. Clone the Core Runtime
 git clone https://github.com/wahyunuriman999/AEGIS-Core.git
 cd AEGIS-Core
 
-# Install dependencies (Python 3.10+)
+# 3. Install dependencies (Requires Python 3.10+)
 pip install -r requirements.txt
 
-# Boot the Kernel
+# 4. Boot the Kernel
 python AEGIS-Runtime\kernel_runner.py --boot
+```
+
+---
+
+## 🚀 Usage Guide
+
+Once AEGIS is installed and the kernel is booted, you interact with the Cognitive Runtime via the CLI. AEGIS does not just "chat"; it executes engineering processes.
+
+### 1. Initializing a Workspace
+Before AEGIS can process tasks, it needs a target workspace to operate in.
+```bash
+python AEGIS-Runtime/kernel_runner.py --init-workspace path/to/your/project
+```
+
+### 2. Submitting a Cognitive Task
+Instead of sending a simple prompt, you submit an "Engineering Intent" to the Dispatcher.
+```bash
+python AEGIS-Runtime/kernel_runner.py --task "Refactor the authentication module to use JWT and follow SOLID principles"
+```
+*AEGIS will run through its pipeline (OBSERVE -> PLAN -> SIMULATE -> EXECUTE) before modifying any files.*
+
+### 3. Compiling New Knowledge
+If you have new documentation, guidelines, or decision trees, compile them into the Knowledge Graph so AEGIS can learn:
+```bash
+python AEGIS-Compiler/build.py --ingest path/to/new/knowledge.md
+```
+
+### 4. Viewing the Execution Graph
+To see how AEGIS planned the execution of your last task and what opcodes it used:
+```bash
+python AEGIS-Runtime/kernel_runner.py --show-graph
 ```
 
 ---
