@@ -125,3 +125,8 @@ AEOS progressive disclosure modules provide deep-dive re-usable playbooks:
 ## ðŸ“œ Licensing
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+## ?? Copyright & License Notice
+**© 2026 All Rights Reserved.**
+This repository and its contents are the intellectual property of the author. Unauthorized copying, modification, distribution, or commercial use of this software is strictly prohibited.
