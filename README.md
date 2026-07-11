@@ -1,4 +1,4 @@
-# 🪐 AEGIS v4.2 × AEOS: Unified AI Engineering Operating System
+# 🪐 AEGIS v5.1 × AEOS: Unified AI Engineering Operating System
 
 <p align="center">
   <a href="https://github.com/wahyunuriman999/aegis/stargazers"><img src="https://img.shields.io/badge/%E2%AD%90%2010%2C000%2B%20Stars-gold?style=for-the-badge" alt="GitHub stars"></a>
@@ -11,7 +11,7 @@
 
 ## 🌟 Why This Repo
 
-**AEGIS v4.2** is not just another collection of prompts. It is a fully-fledged **AI Engineering Operating System & Knowledge Orchestration Layer** evaluated at an outstanding **9.999 / 10** for structural precision. 
+**AEGIS v5.1** is not just another collection of prompts. It is a fully-fledged **AI Engineering Operating System & Knowledge Orchestration Layer** evaluated at an outstanding **9.999 / 10** for structural precision. 
 
 By combining the **AEGIS Execution Protocol** (how to think & act safely) with **AEOS Domain Knowledge** (what to build), it wraps around base AI models (Claude, Gemini, GPT, DeepSeek) like a transmission, driving consistency and avoiding regression.
 
@@ -50,7 +50,7 @@ Version 4.2 has been upgraded with the industry's best agentic practices:
 
 ## 📦 Installation & Setup
 
-Get AEGIS v4.2 running globally in less than a minute.
+Get AEGIS v5.1 running globally in less than a minute.
 
 ### 💻 Windows Installer (PowerShell)
 Open PowerShell as Administrator and execute:
@@ -70,7 +70,7 @@ curl -fsSL https://raw.githubusercontent.com/wahyunuriman999/aegis/main/install.
 
 ## 🔌 Supported Platforms & Tools
 
-AEGIS v4.2 is fully model-agnostic and supports major AI coding environments:
+AEGIS v5.1 is fully model-agnostic and supports major AI coding environments:
 
 | Tool / IDE | Activation Command | Path |
 |:---|:---|:---|
@@ -86,7 +86,7 @@ AEGIS v4.2 is fully model-agnostic and supports major AI coding environments:
 ### The Execution Pipeline
 ```mermaid
 graph TD
-    A[User Request] --> B[AEGIS v4.2 Kernel]
+    A[User Request] --> B[AEGIS v5.1 Kernel]
     B --> C{Complexity Tier Classification}
     C -->|T0/T1| D[Dynamic Engine Activation: Skips 18 engines]
     C -->|T2/T3| E[Activate Full 20-Engine Pipeline]

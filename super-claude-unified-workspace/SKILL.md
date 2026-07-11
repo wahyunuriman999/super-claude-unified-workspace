@@ -264,7 +264,7 @@ Deliver a structured summary — always concise for T0/T1, full for T2/T3:
 
 ---
 
-## §5.5 WORKSPACE SAFETY & ISOLATION PROTOCOL (v4.2)
+## §5.5 WORKSPACE SAFETY & ISOLATION PROTOCOL (v5.1)
 To prevent irreversible damage or editing the wrong codebase, you MUST enforce these rules:
 1. **Strict Source Verification**: Before touching any directory, search the directory levels for zip files, backup files, or newer source packages (e.g. `*_SourceCode_v*.zip` or `*_backup.zip`). Never assume the pre-existing unzipped directory is the target source code. Compare timestamps and versions first.
 2. **Mandatory Sandbox Cloning**: Never edit, compile, or overwrite production/original folders or APKs directly. You must copy the verified source code (or extract from the clean source zip) to a clean folder with the suffix `-Sandbox` or `-Testbed` (e.g., `UsahaKita-v1.1-Sandbox`). Perform all edits and builds ONLY inside this sandbox.
@@ -272,7 +272,7 @@ To prevent irreversible damage or editing the wrong codebase, you MUST enforce t
 
 ---
 
-## §5.6 BEHAVIORAL GOVERNANCE & ACTION GATES (v4.2 - AIEOS Integrated)
+## §5.6 BEHAVIORAL GOVERNANCE & ACTION GATES (v5.1 - AIEOS Integrated)
 Every action is classified before execution to enforce explicit approval boundaries:
 
 | Category | Examples | Gate / Policy |
@@ -297,7 +297,7 @@ Rollback:   [reversion steps in case of failure]
 
 ---
 
-## §6. ENGINE ACTIVATION & PRIORITY MATRIX (v4.2)
+## §6. ENGINE ACTIVATION & PRIORITY MATRIX (v5.1)
 
 ### Engine Activation Rules (Dynamic Mode)
 To optimize reasoning latency and token cost, do not run all 20 engines linearly for simple tasks. Select the engine set based on the complexity tier:
