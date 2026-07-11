@@ -1,4 +1,4 @@
-# 🪐 AEGIS v5.1 × AEOS: Unified AI Engineering Operating System
+# 🪐 AEGIS v5.1: AI Engineering Operating System
 
 <p align="center">
   <a href="https://github.com/wahyunuriman999/aegis/stargazers"><img src="https://img.shields.io/badge/%E2%AD%90%2010%2C000%2B%20Stars-gold?style=for-the-badge" alt="GitHub stars"></a>
