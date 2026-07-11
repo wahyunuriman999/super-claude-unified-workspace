@@ -1,7 +1,15 @@
 {
-  "build_timestamp": 1783790821.4372282,
-  "kernel_version": "v10.0.0-cognitive-pipeline-compiler",
+  "build_timestamp": 1783791089.298646,
+  "kernel_version": "v11.0.0-cognitive-pipeline-compiler",
   "instruction_set": "AEGIS_CIS_V1",
+  "provider_registry": [
+    "9router",
+    "anthropic",
+    "gemini",
+    "litellm",
+    "ollama",
+    "openai"
+  ],
   "state_machine": {
     "current_state": "IDLE",
     "history": []

@@ -3,14 +3,15 @@ import os
 import time
 
 def build_cognitive_pipeline():
-    print("Initiating AEGIS Pipeline Compiler v10.0 (Living OS Mode)...")
+    print("Initiating AEGIS Pipeline Compiler v11.0 (Provider Expansion Mode)...")
     time.sleep(1)
     
     aegis_root = r'C:\Users\ROG G532 LV\.gemini\config\skills\aegis'
     knowledge_path = os.path.join(aegis_root, 'AEGIS-Knowledge', 'knowledge.graph.json')
     output_path = os.path.join(aegis_root, 'runtime_image.json')
+    provider_path = os.path.join(aegis_root, 'AEGIS-Provider', 'adapters')
     
-    print("Parsing Engineering Genome...")
+    print("Parsing Engineering Genome & Provider Registry...")
     if not os.path.exists(knowledge_path):
         print("Error: knowledge.graph.json not found!")
         return
@@ -18,13 +19,19 @@ def build_cognitive_pipeline():
     with open(knowledge_path, 'r', encoding='utf-8') as f:
         graph_data = json.load(f)
         
+    providers = []
+    if os.path.exists(provider_path):
+        providers = [f.replace('.md', '') for f in os.listdir(provider_path) if f.endswith('.md')]
+        
     print(f"Loaded {len(graph_data.get('nodes', {}))} cognitive DNA nodes.")
+    print(f"Loaded {len(providers)} AI Providers: {', '.join(providers)}")
     
     # Generate the Pipeline Executable runtime image
     runtime_image = {
         "build_timestamp": time.time(),
-        "kernel_version": "v10.0.0-cognitive-pipeline-compiler",
+        "kernel_version": "v11.0.0-cognitive-pipeline-compiler",
         "instruction_set": "AEGIS_CIS_V1",
+        "provider_registry": providers,
         "state_machine": {
             "current_state": "IDLE",
             "history": []
