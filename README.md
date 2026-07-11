@@ -267,6 +267,42 @@ The system actively protects its own intellectual property by injecting the prop
 
 ---
 
+## 🧪 Automated System Tests
+
+The AEGIS architecture is continuously verified through internal testing. Below are the actual execution metrics from the most recent test run (`test_aegis.py`):
+
+```text
+[TEST] Testing Knowledge Compiler (build.py)...
+Initiating AEGIS Pipeline Compiler v12.0 (Standard Specification Mode)...
+Compiling Memory Snapshots & Capability Registry...
+Compilation Successful! 3 output graphs generated.
+       -> SUCCESS: Compiled 3 Cognitive Graphs in 505.98 ms
+
+[TEST] Testing Cognitive Kernel (kernel_runner.py)...
+[BIOS: OK] Booting AEGIS Virtual Machine v12.0...
+Kernel Version: v12.0.0-executable-kernel
+Loaded 6 Providers via ABI.
+Mounting L0-L5 Memory Hierarchy...
+
+--- INCOMING EVENT: UNIT TEST DIAGNOSTIC TASK ---
+[Tick 1: OBSERVE] Executing Opcode 0x01...
+[Tick 4: PLAN] Executing Opcode 0x04...
+   -> Invoking Model Orchestrator (Capability: core.planning)
+   -> Hand-off to Provider: OpenAI (GPT-4o)
+[Tick 7: EXECUTE] Executing Opcode 0x07...
+   -> Invoking Model Orchestrator (Capability: infrastructure.routing)
+   -> Hand-off to Provider: 9Router (Gateway)
+
+[KERNEL] Event Loop Completed Successfully. Process Terminated.
+       -> SUCCESS: Kernel executed 9-Tick Cognitive Pipeline in 6.94 seconds
+
+----------------------------------------------------------------------
+Ran 2 tests in 7.468s
+OK
+```
+
+---
+
 ## ❓ FAQ
 
 **Why not just use GPT or Claude?**
