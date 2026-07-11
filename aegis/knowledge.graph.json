@@ -1,54 +1,92 @@
 {
-  "graph_version": "1.0.0",
+  "graph_version": "2.0.0",
+  "graph_strategy": "weighted_semantic",
   "nodes": {
     "REST_API": {
       "title": "REST API Design",
+      "domain": "backend",
       "file": "backend/REST.md",
-      "depends_on": ["Input_Validation", "API_Error_Model"]
+      "priority": "medium",
+      "weight": 75,
+      "depends_on": ["Input_Validation", "API_Error_Model"],
+      "related_to": ["Clean_Code"]
     },
     "Input_Validation": {
       "title": "Input Validation",
+      "domain": "backend",
       "file": "backend/Validation.md",
+      "priority": "high",
+      "weight": 85,
       "depends_on": ["API_Error_Model"]
     },
     "API_Error_Model": {
       "title": "API Error Model",
-      "file": "backend/api/error_model.md"
+      "domain": "backend",
+      "file": "backend/api/error_model.md",
+      "priority": "high",
+      "weight": 80
     },
     "Authentication": {
       "title": "JWT/OAuth2 Authentication",
+      "domain": "security",
       "file": "backend/auth/jwt.md",
-      "depends_on": ["REST_API", "Rate_Limiting"]
+      "priority": "critical",
+      "weight": 95,
+      "depends_on": ["REST_API", "Rate_Limiting"],
+      "conflicts_with": ["Open_Access_Patterns"]
     },
     "Rate_Limiting": {
       "title": "Rate Limiting",
-      "file": "backend/RateLimiting.md"
+      "domain": "security",
+      "file": "backend/RateLimiting.md",
+      "priority": "high",
+      "weight": 85
     },
     "Database_Migration": {
       "title": "Schema Migrations",
+      "domain": "database",
       "file": "database/sql/migrations.md",
+      "priority": "high",
+      "weight": 90,
       "depends_on": ["Database_Transactions"]
     },
     "Database_Transactions": {
       "title": "Transactions (ACID)",
-      "file": "database/Transactions.md"
+      "domain": "database",
+      "file": "database/Transactions.md",
+      "priority": "high",
+      "weight": 90
     },
     "Query_Optimization": {
       "title": "Query Optimization",
+      "domain": "database",
       "file": "database/sql/query_optimization.md",
+      "priority": "medium",
+      "weight": 70,
       "depends_on": ["Database_Indexing"]
     },
     "Database_Indexing": {
       "title": "Indexing",
-      "file": "database/Indexing.md"
+      "domain": "database",
+      "file": "database/Indexing.md",
+      "priority": "medium",
+      "weight": 70
     },
     "Clean_Code": {
       "title": "Clean Code & Naming",
-      "file": "engineering/CleanCode.md"
+      "domain": "engineering",
+      "file": "engineering/CleanCode.md",
+      "priority": "low",
+      "weight": 50,
+      "conflicts_with": ["Performance_Hacks"]
     },
     "Debugging": {
       "title": "Debugging Playbook",
-      "file": "engineering/Debugging.md"
+      "domain": "engineering",
+      "file": "engineering/Debugging.md",
+      "priority": "high",
+      "weight": 85,
+      "related_to": ["API_Error_Model"]
     }
   }
 }

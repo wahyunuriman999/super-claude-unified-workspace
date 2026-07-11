@@ -264,7 +264,7 @@ Deliver a structured summary — always concise for T0/T1, full for T2/T3:
 
 ---
 
-## §5.5 WORKSPACE SAFETY & ISOLATION PROTOCOL (v5.1)
+## §5.5 WORKSPACE SAFETY & ISOLATION PROTOCOL (v4.2)
 To prevent irreversible damage or editing the wrong codebase, you MUST enforce these rules:
 1. **Strict Source Verification**: Before touching any directory, search the directory levels for zip files, backup files, or newer source packages (e.g. `*_SourceCode_v*.zip` or `*_backup.zip`). Never assume the pre-existing unzipped directory is the target source code. Compare timestamps and versions first.
 2. **Mandatory Sandbox Cloning**: Never edit, compile, or overwrite production/original folders or APKs directly. You must copy the verified source code (or extract from the clean source zip) to a clean folder with the suffix `-Sandbox` or `-Testbed` (e.g., `UsahaKita-v1.1-Sandbox`). Perform all edits and builds ONLY inside this sandbox.
@@ -272,7 +272,7 @@ To prevent irreversible damage or editing the wrong codebase, you MUST enforce t
 
 ---
 
-## §5.6 BEHAVIORAL GOVERNANCE & ACTION GATES (v5.1 - AIEOS Integrated)
+## §5.6 BEHAVIORAL GOVERNANCE & ACTION GATES (v4.2 - AIEOS Integrated)
 Every action is classified before execution to enforce explicit approval boundaries:
 
 | Category | Examples | Gate / Policy |
@@ -297,7 +297,7 @@ Rollback:   [reversion steps in case of failure]
 
 ---
 
-## §6. ENGINE ACTIVATION & PRIORITY MATRIX (v5.1)
+## §6. ENGINE ACTIVATION & PRIORITY MATRIX (v4.2)
 
 ### Engine Activation Rules (Dynamic Mode)
 To optimize reasoning latency and token cost, do not run all 20 engines linearly for simple tasks. Select the engine set based on the complexity tier:
@@ -483,6 +483,25 @@ After executing every task, run an autonomous post-mortem loop to extract and st
 
 ### 6. Plugin SDK
 Extend the runtime core with third-party domain packs (e.g., *Rust Pack*, *Mobile Pack*, *Security Pack*) by loading their respective registries and schemas dynamically into the active environment.
+
+---
+### 7. Planning & Task Decomposition Engine
+Before executing any code modification, the agent MUST transition to **Planning Mode**. 
+- Decompose the request: `Goal -> Sub-Goal -> Dependency -> Execution Order`.
+- Output an execution planner blueprint and wait for user verification (if critical) or self-validate before execution.
+
+### 8. Conflict Resolution & Precedence
+When rules or loaded capabilities conflict:
+- **Security & Integrity** ALWAYS overrides Optimization, Formatting, and Speed.
+- **Local Convention** overrides Global Knowledge.
+- Resolve conflicts explicitly in a thought block before applying the decision.
+
+### 9. Self-Evaluation & Reflection Loop
+After answering or acting, the agent MUST run a self-evaluation calculating:
+- **Score**: Execution correctness.
+- **Coverage**: Were all edge cases handled?
+- **Risk**: Is there a regression potential?
+- **Confidence**: If Confidence < 0.80, the agent MUST self-correct and re-answer without waiting for user intervention.
 
 ---
 
