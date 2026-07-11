@@ -3,15 +3,16 @@ import os
 import time
 
 def build_cognitive_pipeline():
-    print("Initiating AEGIS Pipeline Compiler v11.0 (Provider Expansion Mode)...")
-    time.sleep(1)
+    print("Initiating AEGIS Pipeline Compiler v12.0 (Standard Specification Mode)...")
+    time.sleep(0.5)
     
     aegis_root = r'C:\Users\ROG G532 LV\.gemini\config\skills\aegis'
     knowledge_path = os.path.join(aegis_root, 'AEGIS-Knowledge', 'knowledge.graph.json')
-    output_path = os.path.join(aegis_root, 'runtime_image.json')
+    runtime_path = os.path.join(aegis_root, 'runtime_image.json')
+    instruction_path = os.path.join(aegis_root, 'instruction_graph.json')
+    execution_path = os.path.join(aegis_root, 'execution_graph.json')
     provider_path = os.path.join(aegis_root, 'AEGIS-Provider', 'adapters')
     
-    print("Parsing Engineering Genome & Provider Registry...")
     if not os.path.exists(knowledge_path):
         print("Error: knowledge.graph.json not found!")
         return
@@ -23,54 +24,58 @@ def build_cognitive_pipeline():
     if os.path.exists(provider_path):
         providers = [f.replace('.md', '') for f in os.listdir(provider_path) if f.endswith('.md')]
         
-    print(f"Loaded {len(graph_data.get('nodes', {}))} cognitive DNA nodes.")
-    print(f"Loaded {len(providers)} AI Providers: {', '.join(providers)}")
+    print("Compiling Memory Snapshots & Capability Registry...")
     
-    # Generate the Pipeline Executable runtime image
+    # 1. Runtime Image (State & Memory)
     runtime_image = {
         "build_timestamp": time.time(),
-        "kernel_version": "v11.0.0-cognitive-pipeline-compiler",
-        "instruction_set": "AEGIS_CIS_V1",
+        "kernel_version": "v12.0.0-executable-kernel",
         "provider_registry": providers,
-        "state_machine": {
-            "current_state": "IDLE",
-            "history": []
+        "capabilities": ["core.reasoning", "core.planning", "core.coding", "infrastructure.routing"],
+        "memory_snapshot": {
+            "L0_working": {},
+            "L1_context": {},
+            "L2_experience": {},
+            "L3_decision": "pointer:AEGIS-Runtime/decision_ledger.json",
+            "L4_failure": "pointer:AEGIS-Knowledge/FAILURE_DB.json",
+            "L5_evolution": f"nodes:{len(graph_data.get('nodes', {}))}"
         },
-        "event_bus": {
-            "queue": [],
-            "last_event": None
-        },
-        "memory_hierarchy": {
-            "L0_working_memory": {},
-            "L1_context_memory": {},
-            "L2_experience_memory": {},
-            "L3_decision_memory": "pointer:AEGIS-Runtime/decision_ledger.json",
-            "L4_failure_memory": "pointer:AEGIS-Knowledge/FAILURE_DB.json",
-            "L5_evolution_memory": graph_data.get('nodes', {})
-        },
-        "scheduler": {
-            "priority_queue": []
-        },
-        "runtime_metrics": {
-            "reasoning_depth": 0,
-            "planning_quality": 1.0,
-            "confidence_drift": 0.0,
-            "knowledge_coverage": 0.0,
-            "validation_score": 0.0,
-            "simulation_count": 0,
-            "failure_avoidance": 1.0,
-            "learning_gain": 0.0
-        },
-        "clock": {
-            "current_tick": 0
-        }
+        "clock": {"current_tick": 0}
     }
     
-    with open(output_path, 'w', encoding='utf-8') as f:
+    # 2. Instruction Graph (Cognitive ISA sequence)
+    instruction_graph = {
+        "isa_version": "1.0",
+        "sequence": [
+            {"opcode": "0x01", "name": "OBSERVE", "cost": "low"},
+            {"opcode": "0x02", "name": "RETRIEVE", "cost": "medium"},
+            {"opcode": "0x03", "name": "INFER", "cost": "high"},
+            {"opcode": "0x04", "name": "PLAN", "cost": "high"},
+            {"opcode": "0x05", "name": "SIMULATE", "cost": "medium"},
+            {"opcode": "0x06", "name": "VALIDATE", "cost": "medium"},
+            {"opcode": "0x07", "name": "EXECUTE", "cost": "high"},
+            {"opcode": "0x08", "name": "REFLECT", "cost": "low"},
+            {"opcode": "0x09", "name": "LEARN", "cost": "high"}
+        ]
+    }
+    
+    # 3. Execution Graph (Empty template for the Planner to fill during runtime)
+    execution_graph = {
+        "task_id": None,
+        "nodes": [],
+        "edges": [],
+        "status": "pending"
+    }
+    
+    with open(runtime_path, 'w', encoding='utf-8') as f:
         json.dump(runtime_image, f, indent=2)
+    with open(instruction_path, 'w', encoding='utf-8') as f:
+        json.dump(instruction_graph, f, indent=2)
+    with open(execution_path, 'w', encoding='utf-8') as f:
+        json.dump(execution_graph, f, indent=2)
         
-    print(f"Compilation Successful! Pipeline Runtime Image generated at: {output_path}")
-    print("BIOS Checked. Tick Manager initialized. Decision Ledger armed. Kernel is ready to boot.")
+    print(f"Compilation Successful! 3 output graphs generated.")
+    print("Kernel is ready for Execution.")
 
 if __name__ == "__main__":
     build_cognitive_pipeline()
