@@ -12,9 +12,8 @@
     [ <strong><a href="#installation">Installation</a></strong> ] • 
     [ <strong><a href="#usage-guide">Usage Guide</a></strong> ] • 
     [ <strong><a href="#philosophy">Philosophy</a></strong> ] • 
-    [ <strong><a href="#benchmarks">Benchmark</a></strong> ] • 
-    [ <strong><a href="#roadmap">Roadmap</a></strong> ] • 
-    [ <strong><a href="#research">Research</a></strong> ]
+    [ <strong><a href="#current-capabilities-real-world-implementation">Capabilities</a></strong> ] • 
+    [ <strong><a href="#faq">FAQ</a></strong> ]
   </p>
 
   <!-- Animated SVG Banner Placeholder -->
@@ -243,68 +242,28 @@ python AEGIS-Runtime/kernel_runner.py --show-graph
 
 ---
 
-## 📊 Simulated Local Benchmarks (v12.0)
+## ⚡ Current Capabilities (Real-World Implementation)
 
-**The AEGIS Runtime drastically outperforms raw models by orchestrating their cognition through the OBSERVE-PLAN-SIMULATE-EXECUTE pipeline.**
+This repository reflects the **actual** architecture that is currently running and active. The following features are 100% functional today:
 
-*(Note: These figures are based on internal local simulation tests running complex engineering workloads).*
+### 1. System-Level Cognitive Injection
+AEGIS operates via a deep integration into the agent's global rules (`AGENTS.md`) and skills (`SKILL.md`). It successfully intercepts raw AI prompts and forces the agent to execute a strict 4-Tick Pipeline:
+*   **Tick 1: OBSERVE** (Analyzing context and tools)
+*   **Tick 4: PLAN** (Structuring execution graphs)
+*   **Tick 8: EXECUTE** (Running terminal commands and file edits)
+*   **Tick 9: REFLECT** (Verifying success and formatting output)
 
-| Domain | GPT-4o (Raw) | Claude 3.5 Sonnet (Raw) | AEGIS Orchestrated |
-|---|---|---|---|
-| Architecture Review | 78% | 85% | **96.8%** |
-| Security Audits | 82% | 88% | **98.3%** |
-| Complex Refactoring | 80% | 90% | **99.9%** |
-| Reasoning Consistency | 75% | 82% | **90.7%** |
+### 2. Event Loop Orchestration
+The `kernel_runner.py` script acts as a functional simulator for the cognitive event loop, successfully loading runtime images and enforcing the Cognitive Instruction Set Architecture (ISA).
 
----
+### 3. Automated Triple-Output Synchronization
+AEGIS features a proprietary autonomous deployment pipeline. Whenever its core architecture is updated, it automatically:
+1.  Updates the Local Core files.
+2.  Synchronizes to a local Git clone and pushes directly to this private GitHub repository.
+3.  Packages the entire system into a distributable `AEGIS-Core.zip` file.
 
-## 🔬 Research
-
-AEGIS is pioneering an entirely new category: **Engineering Physics in AI**.
-Every decision made by AEGIS is calculated against:
-- **Risk**
-- **Entropy**
-- **Maintainability**
-- **Energy / Complexity**
-- **Technical Debt**
-
-We invite researchers to build upon our **Cognitive ABI**, **Runtime Image Format**, and **Capability Graph**.
-
----
-
-## 🗺️ Roadmap
-
-| Phase | Component | Progress |
-|:---|:---|:---|
-| **Alpha** | Code-First Kernel | ██████████ 100% |
-| **Beta** | Knowledge Compiler | ██████████ 100% |
-| **Gamma** | Cognitive Runtime | ██████████ 100% |
-| **Delta** | Memory Hierarchy | ████████░░ 80% |
-| **Epsilon** | Adaptive Scheduler | ██████░░░░ 60% |
-| **Zeta** | Simulation Engine | ████░░░░░░ 40% |
-| **Eta** | Self-Learning | ██░░░░░░░░ 20% |
-| **Theta** | Studio & Marketplace | ░░░░░░░░░░ 0% |
-
----
-
-## 🌐 Ecosystem
-
-```text
-AEGIS
-│
-├── Kernel
-├── Runtime
-├── Compiler
-├── Knowledge
-├── SDK
-├── Providers
-├── Studio
-├── CLI
-├── Cloud
-├── Marketplace
-├── Genome Store
-└── Research
-```
+### 4. Proprietary Licensing Enforcement
+The system actively protects its own intellectual property by injecting the proprietary license of **Wahyu Nur Iman** into all newly generated or modified source code files.
 
 ---
 
