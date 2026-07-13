@@ -297,7 +297,7 @@ Yang Elite tambahkan secara nyata:
 Tertarik atau ingin berdiskusi soal use case dan harga?
 Hubungi: **wahyunuriman999@gmail.com**
 
-GitHub Elite: [github.com/wahyunuriman999/AEGIS-ELITE](https://github.com/wahyunuriman999/AEGIS-ELITE)
+GitHub Elite (private): [github.com/wahyunuriman999/AEGIS-ELITE](https://github.com/wahyunuriman999/AEGIS-ELITE)
 
 ---
 
