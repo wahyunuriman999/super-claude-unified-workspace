@@ -243,92 +243,92 @@ OK
 
 ---
 
-## Core vs. Elite — Perbandingan Jujur
+## Core vs. Elite — Honest Comparison
 
-AEGIS-Core adalah fondasi. AEGIS-Elite adalah sistem operasi lengkap yang dibangun di atas fondasi ini. Tabel di bawah menunjukkan perbedaan secara jujur, tanpa melebih-lebihkan:
+AEGIS-Core is the foundation. AEGIS-Elite is the full operating system built on top of it. The table below shows the differences honestly, without exaggeration:
 
-| Kemampuan | AEGIS-Core | AEGIS-Elite |
+| Capability | AEGIS-Core | AEGIS-Elite |
 |---|:---:|:---:|
 | **Cognitive Runtime (4-tick pipeline)** | ✅ | ✅ |
 | **Knowledge Compiler** | ✅ | ✅ |
 | **Memory Hierarchy (L1–L5)** | ✅ | ✅ |
-| **Provider routing** (GPT, Claude, Gemini, dll.) | ✅ | ✅ |
-| **Governance** | 1 lapisan (dasar) | **5 lapisan berlapis** |
-| **Audit trail per-commit** | ❌ | ✅ |
-| **Multi-agent consensus** | ❌ | ✅ 5 agen + veto power |
-| **Risk analysis sebelum perubahan** | ❌ | ✅ Blast-radius scoring |
-| **Cognitive Memory lintas sesi** | Basic (L4 Experience) | ✅ 4 subsystem (ADR ledger, topology diff, learning loop, trend analysis) |
-| **Governance makin ketat dari kegagalan** | ❌ | ✅ LearningLoop auto-tightening |
-| **Extension marketplace** | ❌ | ✅ 7 domain pack |
-| **Verifiable benchmark suite** | ❌ | ✅ 6 metrik vs industry baseline |
+| **Provider routing** (GPT, Claude, Gemini, etc.) | ✅ | ✅ |
+| **Governance** | 1 layer (basic) | **5 layers** (Architecture, Security, Maintainability, Performance, Compliance) |
+| **Per-commit audit trail** | ❌ | ✅ |
+| **Multi-agent consensus** | ❌ | ✅ 5 agents + veto power |
+| **Risk analysis before changes** | ❌ | ✅ Blast-radius scoring |
+| **Cross-session cognitive memory** | Basic (L4 Experience) | ✅ 4 subsystems (ADR ledger, topology diff, learning loop, trend analysis) |
+| **Governance tightens from failures** | ❌ | ✅ LearningLoop auto-tightening |
+| **Extension marketplace** | ❌ | ✅ 7 domain packs |
+| **Verifiable benchmark suite** | ❌ | ✅ 6 metrics vs industry baseline |
 | **Enterprise compliance** | ❌ | ✅ SOC2, GDPR, RBAC, audit trail |
 | **Git pre-commit hook** | ❌ | ✅ |
-| **Workflow multi-step dengan rollback** | ❌ | ✅ |
-| **Learning curve** | ⭐⭐⭐⭐⭐ (mudah) | ⭐⭐⭐ (lebih curam) |
-| **Cocok untuk** | Open source, integrasi, belajar | Tim besar, enterprise, regulasi ketat |
+| **Multi-step workflow with rollback** | ❌ | ✅ |
+| **Learning curve** | ⭐⭐⭐⭐⭐ (easy) | ⭐⭐⭐ (steeper) |
+| **Best for** | Open source, integration, learning | Large teams, enterprise, strict regulation |
 
-### Mengapa Core lebih unggul untuk beberapa kasus
+### Why Core is better for some use cases
 
-Core sengaja lebih ringan dan itu adalah kekuatannya:
+Core is intentionally lighter — and that is its strength:
 
-- **Lebih mudah dipelajari** — tidak ada konsep tambahan yang perlu dipahami dulu
-- **Lebih mudah diintegrasikan** — bisa disisipkan ke Cursor, Copilot, Cline, Claude Code tanpa konfigurasi tambahan
-- **Maintenance lebih ringan** — codebase kecil, mudah di-fork dan dikontribusi
-- **Lebih cepat boot** — tanpa overhead governance dan consensus engine
+- **Easier to learn** — no extra concepts to absorb before you start
+- **Easier to integrate** — drops into Cursor, Copilot, Cline, Claude Code with no extra configuration
+- **Lighter maintenance** — small codebase, easy to fork and contribute to
+- **Faster boot** — no overhead from governance and consensus engines
 
-Core adalah pilihan tepat jika Anda tidak membutuhkan semua lapisan enterprise yang ada di Elite.
+Core is the right choice if you don't need all the enterprise layers that Elite provides.
 
 ---
 
 ## AEGIS Elite
 
-Untuk tim yang membutuhkan lebih dari fondasi, ada tier premium bernama **AEGIS Elite**.
+For teams that need more than the foundation, there is a premium tier called **[AEGIS Elite](https://github.com/wahyunuriman999/AEGIS-ELITE)**.
 
-Elite bukan sekadar Core dengan fitur tambahan. Elite adalah platform engineering lengkap yang menggunakan Core sebagai kernelnya — sama seperti Ubuntu menggunakan kernel Linux sebagai fondasinya.
+Elite is not just Core with extra features. It is a complete engineering platform that uses Core as its kernel — the same way Ubuntu uses the Linux kernel as its foundation.
 
-Yang Elite tambahkan secara nyata:
-- Governance 5 lapisan yang memblokir commit bermasalah sebelum masuk ke codebase
-- 5-agent AI council yang mendebat setiap perubahan, dengan hak veto untuk keamanan dan arsitektur
-- Sistem memory kognitif yang belajar dari kegagalan dan makin ketat seiring waktu
-- Risk assessment untuk menghitung dampak perubahan sebelum dieksekusi
-- Extension packs untuk domain spesifik (React, Flutter, Laravel, Rust, Security, ML, Python)
+What Elite actually adds:
+- 5-layer governance engine that blocks problematic commits before they enter the codebase
+- 5-agent AI council that debates every change, with veto rights for security and architecture
+- Cognitive memory system that learns from failures and tightens governance over time
+- Risk assessment that calculates the blast radius of changes before execution
+- Extension packs for specific domains (React, Flutter, Laravel, Rust, Security, ML, Python)
 - Enterprise compliance (SOC2, GDPR, RBAC, audit trail)
 
-Tertarik atau ingin berdiskusi soal use case dan harga?
-Hubungi: **wahyunuriman999@gmail.com**
+Interested in discussing your use case and pricing?
+Contact: **wahyunuriman999@gmail.com**
 
-GitHub Elite (private): [github.com/wahyunuriman999/AEGIS-ELITE](https://github.com/wahyunuriman999/AEGIS-ELITE)
+GitHub Elite: [github.com/wahyunuriman999/AEGIS-ELITE](https://github.com/wahyunuriman999/AEGIS-ELITE)
 
 ---
 
-## Memilih Core atau Elite
+## Choosing Core or Elite
 
-Ini bukan tentang mana yang "lebih baik" secara absolut. Ini tentang kebutuhan.
+This is not about which is "better" in absolute terms. It is about what you need.
 
-**Pilih Core jika:**
-- Anda ingin memahami dan bereksperimen dengan AEGIS
-- Tim Anda kecil (1–5 developer)
-- Anda ingin mengintegrasikan AEGIS ke toolchain yang sudah ada
-- Open source dan komunitas adalah prioritas
+**Choose Core if:**
+- You want to understand and experiment with AEGIS
+- Your team is small (1–5 developers)
+- You want to integrate AEGIS into an existing toolchain
+- Open source and community contribution are priorities
 
-**Pilih Elite jika:**
-- Tim Anda > 5 developer dengan standar kode yang perlu dijaga terpusat
-- Anda butuh auditability dan governance untuk kepatuhan regulasi
-- Perlu workflow otomatis dari requirement hingga deployment
-- Setiap commit harus melewati validasi berlapis sebelum masuk ke production
+**Choose Elite if:**
+- Your team has 5+ developers with code standards that need centralized enforcement
+- You need auditability and governance for regulatory compliance
+- You need automated workflows from requirement through deployment
+- Every commit must pass layered validation before reaching production
 
 ---
 
 ## FAQ
 
-**Mengapa tidak pakai GPT atau Claude langsung?**
-Language models memprediksi token. AEGIS mengontrol *bagaimana* dan *kapan* mereka memprediksi token — menggunakan formal scheduler, reflection loop, dan simulation layer. LLM adalah compute, bukan otak.
+**Why not just use GPT or Claude directly?**
+Language models predict tokens. AEGIS controls *how* and *when* they predict tokens — using a formal scheduler, reflection loop, and simulation layer. The LLM is the compute, not the brain.
 
-**Mengapa tidak pakai LangChain atau CrewAI?**
-Itu adalah workflow dan agent frameworks. AEGIS beroperasi di lapisan lebih bawah — mendefinisikan Instruction Set, Memory Hierarchy, dan Execution Graph yang framework-framework itu duduki di atasnya.
+**Why not use LangChain or CrewAI?**
+Those are workflow and agent frameworks. AEGIS operates at a lower layer — it defines the Instruction Set, Memory Hierarchy, and Execution Graph that those frameworks would sit on top of.
 
-**Mengapa knowledge dikompilasi bukan di-prompt?**
-Mengirim ribuan baris markdown ke prompt menghasilkan noise dan non-determinisme. Mengkompilasinya ke dalam graph memastikan runtime punya knowledge base yang terstruktur dan bisa di-query.
+**Why compile knowledge instead of including it in prompts?**
+Sending thousands of lines of markdown into a prompt introduces noise and non-determinism. Compiling it into a graph ensures the runtime has a structured, queryable knowledge base.
 
 ---
 
