@@ -1,50 +1,49 @@
 {
-  "isa_version": "1.0",
+  "isa_version": "2.0",
   "sequence": [
     {
       "opcode": "0x01",
-      "name": "OBSERVE",
-      "cost": "low"
+      "name": "OBSERVE"
     },
     {
       "opcode": "0x02",
-      "name": "RETRIEVE",
-      "cost": "medium"
+      "name": "RETRIEVE"
     },
     {
       "opcode": "0x03",
-      "name": "INFER",
-      "cost": "high"
+      "name": "COMPARE"
     },
     {
       "opcode": "0x04",
-      "name": "PLAN",
-      "cost": "high"
+      "name": "EVALUATE"
     },
     {
       "opcode": "0x05",
-      "name": "SIMULATE",
-      "cost": "medium"
+      "name": "PLAN"
     },
     {
       "opcode": "0x06",
-      "name": "VALIDATE",
-      "cost": "medium"
+      "name": "PREDICT"
     },
     {
       "opcode": "0x07",
-      "name": "EXECUTE",
-      "cost": "high"
+      "name": "SIMULATE"
     },
     {
       "opcode": "0x08",
-      "name": "REFLECT",
-      "cost": "low"
+      "name": "DEBATE"
     },
     {
       "opcode": "0x09",
-      "name": "LEARN",
-      "cost": "high"
+      "name": "VALIDATE"
+    },
+    {
+      "opcode": "0x0A",
+      "name": "REFLECT"
+    },
+    {
+      "opcode": "0x0B",
+      "name": "LEARN"
     }
   ]
 }
