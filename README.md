@@ -37,6 +37,42 @@ Language models are powerful, but they have no native scheduler, no memory hiera
 
 ---
 
+
+### Product Map: AEGIS Core Ecosystem
+
+`mermaid
+mindmap
+  root((AEGIS Core))
+    Cognitive Pipeline
+      Tick 1 OBSERVE (Context)
+      Tick 4 PLAN (Strategy)
+      Tick 8 EXECUTE (Action)
+      Tick 9 REFLECT (Feedback)
+    Memory Hierarchy
+      L1 Working Memory
+      L2 Context State
+      L3 Knowledge Base
+      L4 Experience Logs
+      L5 Engineering Genome
+    Provider Ecosystem
+      OpenAI (GPT-4o)
+      Anthropic (Claude 3.5)
+      Google (Gemini Pro)
+      Local (Ollama / Llama3)
+      Aggregators (9Router / LiteLLM)
+    Knowledge Compiler
+      Markdown Parser
+      AST Generation
+      Instruction Graph
+      Runtime Image
+    Target Environments
+      CLI Automation
+      IDE Integrations (Cursor, Copilot)
+      CI/CD Pipelines
+`
+
+---
+
 ## Architecture
 
 AEGIS is divided into focused subsystems:
