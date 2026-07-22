@@ -5,65 +5,63 @@
 # All rights reserved.
 # ==========================================
 
-import json
 import os
-import time
 import sys
+import time
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+
+# Add directories to system path so we can import modules with dashes in parent names
+sys.path.insert(0, os.path.join(parent_dir, "AEGIS-Kernel"))
+sys.path.insert(0, os.path.join(parent_dir, "AEGIS-Provider"))
+
+try:
+    from memory.memory_manager import MemoryHierarchy
+    from instruction_set.isa_executor import ISAExecutor
+    from dispatcher.event_dispatcher import EventDispatcher
+    from provider_manager import ProviderManager, MockProvider
+except ImportError as e:
+    print(f"Failed to import core modules: {e}")
+    sys.exit(1)
 
 class AegisVirtualMachine:
     def __init__(self, aegis_root):
         self.root = aegis_root
-        self.runtime_path = os.path.join(aegis_root, 'runtime_image.json')
-        self.instruction_path = os.path.join(aegis_root, 'instruction_graph.json')
-        self.runtime = {}
-        self.isa = {}
+        self.memory = MemoryHierarchy(self.root)
+        self.provider_manager = ProviderManager()
+        self.isa_executor = ISAExecutor(self.memory, self.provider_manager)
+        self.dispatcher = EventDispatcher(self.isa_executor)
         
     def boot(self):
         print("[BIOS: OK] Booting AEGIS Virtual Machine v12.0...")
         time.sleep(0.5)
         
-        if not os.path.exists(self.runtime_path) or not os.path.exists(self.instruction_path):
-            print("ERROR: Missing Runtime Image or Instruction Graph. Please run compiler first.")
-            sys.exit(1)
-            
-        with open(self.runtime_path, 'r', encoding='utf-8') as f:
-            self.runtime = json.load(f)
-            
-        with open(self.instruction_path, 'r', encoding='utf-8') as f:
-            self.isa = json.load(f)
-            
-        print(f"Kernel Version: {self.runtime.get('kernel_version')}")
-        print(f"Loaded {len(self.runtime.get('provider_registry', []))} Providers via ABI.")
-        print("Mounting L0-L5 Memory Hierarchy...")
+        # 1. Mount Memory
+        self.memory.mount()
+        
+        # 2. Register Providers
+        self.provider_manager.register_provider("OpenAI (GPT-4o)", MockProvider("OpenAI (GPT-4o)"))
+        self.provider_manager.register_provider("9Router (Gateway)", MockProvider("9Router (Gateway)"))
+        
+        print(f"Kernel Version: v12.0.0-executable-kernel")
+        print(f"Loaded {len(self.provider_manager.providers)} Providers via ABI.")
         time.sleep(0.5)
         print("Initializing Event Bus & Process Manager...\n")
         time.sleep(0.5)
         
     def execute_event_loop(self, task_name="Simulated User Request"):
-        print(f"--- INCOMING EVENT: {task_name} ---")
-        
-        for index, instr in enumerate(self.isa.get('sequence', [])):
-            tick = index + 1
-            opcode = instr.get('opcode')
-            name = instr.get('name')
-            
-            # Print Cognitive Tick
-            print(f"[Tick {tick}: {name}] Executing Opcode {opcode}...")
-            time.sleep(0.6) # Simulate cognitive latency
-            
-            if name == "PLAN":
-                print("   -> Invoking Model Orchestrator (Capability: core.planning)")
-                print("   -> Hand-off to Provider: OpenAI (GPT-4o)")
-            elif name == "EXECUTE":
-                print("   -> Invoking Model Orchestrator (Capability: infrastructure.routing)")
-                print("   -> Hand-off to Provider: 9Router (Gateway)")
-            elif name == "LEARN":
-                print("   -> Modifying Genome (knowledge.graph.json)")
-                
-        print("\n[KERNEL] Event Loop Completed Successfully. Process Terminated.")
+        self.dispatcher.dispatch(task_name)
         
 if __name__ == "__main__":
     aegis_root = r'C:\Users\ROG G532 LV\.gemini\config\skills\aegis'
     vm = AegisVirtualMachine(aegis_root)
     vm.boot()
-    vm.execute_event_loop("Build Kubernetes Cluster Architecture")
+    
+    # Read task from CLI args if provided
+    task = "Build Kubernetes Cluster Architecture"
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "--task" and len(sys.argv) > 2:
+            task = sys.argv[2]
+            
+    vm.execute_event_loop(task)
