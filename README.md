@@ -40,7 +40,7 @@ Language models are powerful, but they have no native scheduler, no memory hiera
 
 ### Product Map: AEGIS Core Ecosystem
 
-`mermaid
+```mermaid
 mindmap
   root((AEGIS Core))
     Cognitive Pipeline
@@ -69,7 +69,7 @@ mindmap
       CLI Automation
       IDE Integrations (Cursor, Copilot)
       CI/CD Pipelines
-`
+```
 
 ---
 
